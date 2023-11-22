@@ -11,6 +11,9 @@ class warpoutCommand extends minecraftCommand {
     this.isOnCooldown = false;
   }
   async onCommand(username, message) {
+
+    throw "Este comando ha sido deshabilitado."
+
     try {
       if (this.isOnCooldown) {
         return this.send(`/gc ${username} Command is on cooldown`);
