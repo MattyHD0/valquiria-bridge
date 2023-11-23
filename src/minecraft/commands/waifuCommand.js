@@ -18,8 +18,9 @@ class WaifuCommand extends minecraftCommand {
   async onCommand(username, message) {
     try {
       const link = (
-        await axios.get(`https://api.waifu.pics/sfw/waifu`)
-      ).data.url;
+        //await axios.get(`https://api.waifu.pics/sfw/waifu`) Old api
+        await axios.get(`https://api.waifu.im/search?included_tags=waifu`) // new api :eyes:
+      ).data.images[0].url;
       console.log(link)
       const upload = await client.upload({ image: link, type: "stream" });
       this.send(`/gc Waifu: ${upload.data.link}`);
