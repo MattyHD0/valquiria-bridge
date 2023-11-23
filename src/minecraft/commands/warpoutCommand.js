@@ -12,7 +12,10 @@ class warpoutCommand extends minecraftCommand {
   }
   async onCommand(username, message) {
 
-    throw "Este comando ha sido deshabilitado."
+    if(!(username == "MattyHD0" || username == "sBlacky_")){
+      this.send("Esta comando esta deshabilitado para jugadores normales.");
+      return;
+    }
 
     try {
       if (this.isOnCooldown) {
