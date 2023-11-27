@@ -34,7 +34,7 @@ class RenderCommand extends minecraftCommand {
       const pet = profile.pets.find((pet) => pet.active === true);
 
       if (pet === undefined) {
-        return this.send(`/gc ${username} does not have pet equiped.`);
+        return this.send(`/gc ${username} no tiene mascota equipada.`);
       }
 
       const renderedItem = await renderLore(
@@ -44,7 +44,7 @@ class RenderCommand extends minecraftCommand {
 
       const upload = await uploadImage(renderedItem);
 
-      return this.send(`/gc ${username}'s Active Pet: ${upload.data.link ?? "Something went Wrong.."}`);
+      return this.send(`/gc Pet activa de ${username}: ${upload.data.link ?? "Algo salio mal..."}`);
     } catch (error) {
       console.log(error);
       this.send(`/gc [ERROR] ${error}`);

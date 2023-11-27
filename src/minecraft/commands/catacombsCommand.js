@@ -31,7 +31,7 @@ class CatacombsCommand extends minecraftCommand {
 
       if (dungeons == null) {
         // eslint-disable-next-line no-throw-literal
-        throw `${username} has never played dungeons on ${data.profileData.cute_name}.`;
+        throw `${username} nunca ha jugado dungeons en ${data.profileData.cute_name}.`;
       }
 
       const completions = Object.values(dungeons.catacombs)

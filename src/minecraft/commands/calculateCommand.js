@@ -23,7 +23,7 @@ class CalculateCommand extends minecraftCommand {
       const answer = eval(calculation);
 
       if (answer === Infinity) {
-        return this.send(`/gc Something went wrong.. Somehow you broke it (the answer was infinity)`);
+        return this.send(`/gc Algo salió mal... De alguna manera lo rompiste (la respuesta fue infinita)`);
       }
 
       this.send(`/gc ${calculation} = ${formatNumber(answer)} (${answer.toLocaleString()})`);

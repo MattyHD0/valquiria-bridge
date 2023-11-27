@@ -27,9 +27,9 @@ class GuildInformationCommand extends minecraftCommand {
       const guild = await hypixel.getGuild("name", guildName);
 
       this.send(
-        `/gc Guild ${guildName} | Tag: [${guild.tag}] | Members: ${guild.members.length} | Level: ${
+        `/gc Guild ${guildName} | Tag: [${guild.tag}] | Miembros: ${guild.members.length} | Nivel: ${
           guild.level
-        } | Weekly GEXP: ${formatNumber(guild.totalWeeklyGexp)}`
+        } | GEXP Semanal: ${formatNumber(guild.totalWeeklyGexp)}`
       );
     } catch (error) {
       this.send(

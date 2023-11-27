@@ -18,15 +18,15 @@ class KittyCommand extends minecraftCommand {
 
       if (data === undefined) {
         // eslint-disable-next-line no-throw-literal
-        throw "An error occured while fetching the image. Please try again later.";
+        throw "Se produjo un error al obtener la imagen. Por favor, inténtelo de nuevo más tarde.";
       }
 
       const link = data[0].url;
       const upload = await uploadImage(link);
 
-      this.send(`/gc Cute Cat: ${upload.data.link}`);
+      this.send(`/gc Gatito: ${upload.data.link}`);
     } catch (error) {
-      this.send(`/gc [ERROR] ${error ?? "Something went wrong.."}`);
+      this.send(`/gc [ERROR] ${error ?? "Algo salio mal.."}`);
     }
   }
 }

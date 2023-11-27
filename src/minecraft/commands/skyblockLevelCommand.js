@@ -27,7 +27,7 @@ class CatacombsCommand extends minecraftCommand {
       username = formatUsername(username, data.profileData?.game_mode);
 
       const experience = data.profile.leveling?.experience ?? 0;
-      this.send(`/gc ${username}'s Skyblock Level: ${experience ? experience / 100 : 0}`);
+      this.send(`/gc Skyblock Level de ${username}: ${experience ? experience / 100 : 0}`);
     } catch (error) {
       console.log(error);
 

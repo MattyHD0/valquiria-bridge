@@ -21,11 +21,18 @@ class WaifuCommand extends minecraftCommand {
         //await axios.get(`https://api.waifu.pics/sfw/waifu`) Old api
         await axios.get(`https://api.waifu.im/search?included_tags=waifu`) // new api :eyes:
       ).data.images[0].url;
-      console.log(link)
+      
       const upload = await client.upload({ image: link, type: "stream" });
+
+      if(upload.data == undefined){
+        this.send(`/gc No se pudo subir la imagen a imgur...`);
+        return;
+      }
+
+      
       this.send(`/gc Waifu: ${upload.data.link}`);
     } catch (error) {
-      this.send(`/gc Error: ${error ?? "Something went wrong.."}`);
+      this.send(`/gc Error: ${error ?? "Algo salio mal..."}`);
     }
   }
 }

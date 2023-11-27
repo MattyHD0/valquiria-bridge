@@ -33,7 +33,7 @@ class EightBallCommand extends minecraftCommand {
 
       const bestiary = getBestiary(data.profile);
       if (bestiary === null) {
-        return this.send(`/gc This player has not yet joined SkyBlock since the bestiary update.`);
+        return this.send(`/gc Este jugador aún no se ha unido a SkyBlock desde la actualización del bestiario.`);
       }
 
       if (mob) {
@@ -51,7 +51,7 @@ class EightBallCommand extends minecraftCommand {
       }
 
       this.send(
-        `/gc ${username}'s Bestiary Milestone: ${bestiary.milestone} / ${bestiary.maxMilestone} | Unlocked Tiers: ${bestiary.tiersUnlocked} / ${bestiary.totalTiers}`
+        `/gc ${username}'s Bestiary Milestone: ${bestiary.milestone} / ${bestiary.maxMilestone} | Niveles Desbloqueados: ${bestiary.tiersUnlocked} / ${bestiary.totalTiers}`
       );
 
       if (playerUsername === username) {
@@ -66,7 +66,7 @@ class EightBallCommand extends minecraftCommand {
 
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        this.send(`/gc Closest to level up: ${topFiveMobs.join(", ")}`);
+        this.send(`/gc Más cercano a subir de nivel: ${topFiveMobs.join(", ")}`);
       }
     } catch (error) {
       console.log(error);
