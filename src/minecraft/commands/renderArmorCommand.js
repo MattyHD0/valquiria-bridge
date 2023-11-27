@@ -29,7 +29,7 @@ class ArmorCommand extends minecraftCommand {
       username = formatUsername(username, profile.profileData?.game_mode);
 
       if (profile.profile.inv_armor?.data === undefined) {
-        return this.send(`/gc This player has an Inventory API off.`);
+        return this.send(`/gc Este jugador tiene su Inventory API desactivada.`);
       }
 
       const { i: inventoryData } = await decodeData(Buffer.from(profile.profile.inv_armor.data, "base64"));
@@ -38,7 +38,7 @@ class ArmorCommand extends minecraftCommand {
         inventoryData === undefined ||
         inventoryData.filter((x) => JSON.stringify(x) === JSON.stringify({})).length === 4
       ) {
-        return this.send(`/gc ${username} has no armor equipped.`);
+        return this.send(`/gc ${username} no tiene ninguna armadura equipada.`);
       }
 
       let response = "";
@@ -59,7 +59,7 @@ class ArmorCommand extends minecraftCommand {
         response += response.split(" | ").length == 4 ? link : `${link} | `;
       }
 
-      this.send(`/gc ${username}'s Armor: ${response}`);
+      this.send(`/gc Armadura de ${username}: ${response}`);
     } catch (error) {
       this.send(`/gc [ERROR] ${error}`);
     }

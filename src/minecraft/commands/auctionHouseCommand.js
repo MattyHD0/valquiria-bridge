@@ -41,7 +41,7 @@ class AuctionHouseCommand extends minecraftCommand {
       const player = playerResponse.data?.player || {};
 
       if (auctions.length === 0) {
-        return this.send(`/gc This player has no active auctions.`);
+        return this.send(`/gc Este jugador no tiene subastas activas.`);
       }
 
       const activeAuctions = auctions.filter((auction) => auction.end >= Date.now());
@@ -90,7 +90,7 @@ class AuctionHouseCommand extends minecraftCommand {
         string += string === "" ? upload.data.link : " | " + upload.data.link;
       }
 
-      this.send(`/gc ${`${username}'s Active Auctions: ${string}`}`);
+      this.send(`/gc ${`Subastas activas de ${username}: ${string}`}`);
     } catch (error) {
       console.log(error);
       this.send(`/gc [ERROR] ${error}`);

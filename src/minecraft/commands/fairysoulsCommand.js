@@ -30,7 +30,7 @@ class FairySoulsCommand extends minecraftCommand {
       const { fairy_souls_collected } = data.profile;
 
       this.send(
-        `/gc ${username}'s Fairy Souls: ${fairy_souls_collected}/${total} | Progress: ${(
+        `/gc ${username}'s Fairy Souls: ${fairy_souls_collected}/${total} | Progreso: ${(
           (fairy_souls_collected / total) *
           100
         ).toFixed(2)}%`

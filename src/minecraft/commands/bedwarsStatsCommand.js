@@ -50,7 +50,7 @@ class BedwarsCommand extends minecraftCommand {
           )} BLR: ${BLRatio} WS: ${winstreak}`
         );
       } else {
-        this.send("/gc Invalid mode. Valid modes: overall, solo, doubles, threes, fours, 4v4");
+        this.send("/gc Modo invalido. Modos disponibles: overall, solo, doubles, threes, fours, 4v4");
       }
     } catch (error) {
       this.send(

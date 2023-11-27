@@ -28,10 +28,10 @@ class GuildExperienceCommand extends minecraftCommand {
 
       if (player === undefined) {
         // eslint-disable-next-line no-throw-literal
-        throw "Player is not in the Guild.";
+        throw "El jugador no está en ninguna guild.";
       }
 
-      this.send(`/gc ${username}'s Weekly Guild Experience: ${player.weeklyExperience.toLocaleString()}.`);
+      this.send(`/gc ${username}'s Experiencia de Guild Semanal: ${player.weeklyExperience.toLocaleString()}.`);
     } catch (error) {
       this.send(
         `/gc ${error

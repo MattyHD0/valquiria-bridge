@@ -50,7 +50,7 @@ class RenderCommand extends minecraftCommand {
       username = formatUsername(username, profile.profileData?.game_mode);
 
       if (profile.profile?.inv_contents?.data === undefined) {
-        return this.send(`/gc This player has an Inventory API off.`);
+        return this.send(`/gc Este jugador tiene su Inventory API desactivada.`);
       }
 
       const { i: inventoryData } = await decodeData(Buffer.from(profile.profile.inv_contents.data, "base64"));
@@ -59,7 +59,7 @@ class RenderCommand extends minecraftCommand {
         inventoryData[itemNumber - 1] === undefined ||
         Object.keys(inventoryData[itemNumber - 1] || {}).length === 0
       ) {
-        return this.send(`/gc Player does not have an item at slot ${itemNumber}.`);
+        return this.send(`/gc Este jugador no tiene ningun objeto en su slot ${itemNumber}.`);
       }
 
       const Name = inventoryData[itemNumber - 1]?.tag?.display?.Name;
@@ -69,7 +69,7 @@ class RenderCommand extends minecraftCommand {
 
       const upload = await uploadImage(renderedItem);
 
-      this.send(`/gc ${username}'s item at slot ${itemNumber}: ${upload.data.link}`);
+      this.send(`/gc Slot ${itemNumber} de ${username}: ${upload.data.link}`);
     } catch (error) {
       console.log(error);
       this.send(`/gc [ERROR] ${error}`);

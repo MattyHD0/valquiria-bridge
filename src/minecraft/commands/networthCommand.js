@@ -34,7 +34,7 @@ class NetWorthCommand extends minecraftCommand {
       });
 
       if (profile.noInventory === true) {
-        return this.send(`/gc ${username} has an Inventory API off!`);
+        return this.send(`/gc ${username} tiene su Inventory API desactivada!`);
       }
 
       const networth = formatNumber(profile.networth);
