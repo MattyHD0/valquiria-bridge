@@ -39,6 +39,7 @@ class MinecraftManager extends CommunicationBridge {
       port: 25565,
       auth: "microsoft",
       version: "1.8.9",
+      checkTimeoutInterval: 60000,
       viewDistance: "tiny",
       chatLengthLimit: 256,
       profilesFolder: "./auth-cache",
