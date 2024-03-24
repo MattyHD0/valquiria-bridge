@@ -40,8 +40,8 @@ class StateHandler extends eventHandler {
       });
     }
 
-    if (this.isLobbyJoinMessage(message)) {
-      // return bot.chat("\u00a7");
+    if (this.isLobbyJoinMessage(message) && config.discord.other.autoLimbo === true) {
+      return bot.chat("\u00a7");
     }
 
     if (this.isPartyMessage(message) && config.minecraft.fragBot.enabled === true) {
@@ -759,6 +759,11 @@ class StateHandler extends eventHandler {
 
   isDiscordMessage(message) {
     const isDiscordMessage = /^(?<username>(?!https?:\/\/)[^\s»:>]+)\s*[»:>]\s*(?<message>.*)/;
+
+    const match = message.match(isDiscordMessage);
+    if (match && ["Party", "Guild", "Officer"].includes(match.groups.username)) {
+      return false;
+    }
 
     return isDiscordMessage.test(message);
   }

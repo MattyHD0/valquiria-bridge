@@ -93,12 +93,15 @@
       "messageMode": "minecraft",
       "messageFormat": "{chatType} > {skin} {rank} {username} {guildRank}§f: {message}",
       "filterMessages": true,
-      "joinMessage": true
+      "filterWords": ["dox", "doxx", "doxed", "doxxed", "doxing", "doxxing", "doxes", "doxxes", "zickles"],
+      "joinMessage": true,
+      "autoLimbo": false
     }
   },
   "web": {
     "enabled": false,
-    "port": 1439
+    "port": 1439,
+    "token": "WEBSOCKET_TOKEN"
   },
   "other": {
     "autoUpdater": true,
