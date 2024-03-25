@@ -21,10 +21,8 @@ class AlloyCommand extends minecraftCommand {
       
       const difference = Date.now()-lastDroppedAlloy;
 
-      let hoursDifferenceDouble = difference/1000/60/60;
-
-      let hours = Math.floor(hoursDifferenceDouble);
-      let minutes = Math.floor(hoursDifferenceDouble%1)*60
+      let hours = Math.floor(difference / (1000 * 60 * 60));
+      let minutes = Math.floor(difference / (1000 * 60) % 60)
 
       this.send(`/gc Ultimo Divan's Alloy dropeado hace ${hours} horas y ${minutes} minutos`);
 
