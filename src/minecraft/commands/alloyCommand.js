@@ -3,7 +3,7 @@ const config = require("../../../config.json");
 // eslint-disable-next-line
 const axios = require("axios");
 
-class WaifuCommand extends minecraftCommand {
+class AlloyCommand extends minecraftCommand {
   constructor(minecraft) {
     super(minecraft);
 
@@ -24,7 +24,7 @@ class WaifuCommand extends minecraftCommand {
       let hoursDifferenceDouble = difference/1000/60;
 
       let hours = Math.floor(hoursDifferenceDouble);
-      let minutes = Math.floor(hoursDifferenceDouble/60)
+      let minutes = Math.floor(hoursDifferenceDouble%60)
 
       this.send(`/gc Ultimo Divan0s Alloy dropeado hace ${hours} horas y ${minutes} minutos`);
 
