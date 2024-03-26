@@ -1,8 +1,7 @@
 const minecraftCommand = require("../../contracts/minecraftCommand.js");
 const config = require("../../../config.json");
 // eslint-disable-next-line
-const { ImgurClient } = require("imgur");
-const client = new ImgurClient({ clientId: config.minecraft.API.imgurAPIkey });
+const { imgur } = require("../../contracts/API/imgurAPI.js");
 const axios = require("axios");
 
 class WaifuCommand extends minecraftCommand {
@@ -22,7 +21,7 @@ class WaifuCommand extends minecraftCommand {
         await axios.get(`https://api.waifu.im/search?included_tags=waifu`) // new api :eyes:
       ).data.images[0].url;
       
-      const upload = await client.upload({ image: link, type: "stream" });
+      const upload = await imgur.upload(link);
 
       if(upload.data == undefined){
         this.send(`/gc No se pudo subir la imagen a imgur...`);
