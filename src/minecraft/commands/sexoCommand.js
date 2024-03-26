@@ -14,6 +14,12 @@ class SexoCommand extends minecraftCommand {
     this.options = [];
   }
 
+  usersWithelist = [
+    "MattyHD0",
+    "sBlacky_",
+    "WanderingAka"
+  ]
+
   async onCommand(username, message) {
     try {
       const link = (
@@ -21,6 +27,11 @@ class SexoCommand extends minecraftCommand {
         await axios.get(`https://api.waifu.im/search?included_tags=ero`) // new api :eyes:
       ).data.images[0].url;
       
+      if(!this.usersWithelist.includes(username)){
+        this.send(`/gc Solo ${this.usersWithelist.join(",")} pueden utilizar este comando uwur`);
+        return;
+      }
+
       const upload = await uploadImage(link);
 
       if(upload.data == undefined){
