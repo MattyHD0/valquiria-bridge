@@ -4,11 +4,11 @@ const config = require("../../../config.json");
 const { uploadImage } = require("../../contracts/API/imgurAPI.js");
 const axios = require("axios");
 
-class SuicideCommand extends minecraftCommand {
+class SexoCommand extends minecraftCommand {
   constructor(minecraft) {
     super(minecraft);
 
-    this.name = "suicide";
+    this.name = "sexo";
     this.aliases = [];
     this.description = "Random image of ero waifu.";
     this.options = [];
@@ -36,4 +36,4 @@ class SuicideCommand extends minecraftCommand {
   }
 }
 
-module.exports = SuicideCommand;
+module.exports = SexoCommand;
