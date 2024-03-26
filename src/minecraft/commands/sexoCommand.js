@@ -28,7 +28,7 @@ class SexoCommand extends minecraftCommand {
       ).data.images[0].url;
       
       if(!this.usersWithelist.includes(username)){
-        this.send(`/gc Solo ${this.usersWithelist.join(",")} pueden utilizar este comando uwur`);
+        this.send(`/gc ¡No tienes suficiente poder para invocar este tipo de magia (☞ﾟヮﾟ)☞!`);
         return;
       }
 
