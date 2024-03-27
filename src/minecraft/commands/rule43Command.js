@@ -48,7 +48,7 @@ class Rule34Command extends minecraftCommand {
         return;
       }
 
-      const upload = await uploadImage();
+      const upload = await uploadImage(imageUrl);
 
       if(upload.data == undefined){
         this.send(`/gc No se pudo subir la imagen a imgur...`);
