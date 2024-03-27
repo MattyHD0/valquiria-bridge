@@ -39,15 +39,16 @@ class Rule34Command extends minecraftCommand {
                 await axios.get(`https://api.rule34.xxx/index.php?page=dapi&s=post&q=index&json=1&tags=${query}`)
       ).data;
       
-      if(posts == undefined){
+      let postsAmount = posts.length;
+      let selectedPost = Math.floor(Math.random()*postsAmount);
+      let imageUrl = posts[selectedPost].sample_url;
+      
+      if(imageUrl == undefined){
         this.send(`/gc ¡No encontre ningun resultado! :(`);
         return;
       }
 
-      let postsAmount = posts.length;
-      let selectedPost = Math.floor(Math.random()*postsAmount);
-
-      const upload = await uploadImage(posts[selectedPost].sample_url);
+      const upload = await uploadImage();
 
       if(upload.data == undefined){
         this.send(`/gc No se pudo subir la imagen a imgur...`);
