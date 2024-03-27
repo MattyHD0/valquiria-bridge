@@ -39,7 +39,7 @@ class Rule34Command extends minecraftCommand {
                 await axios.get(`https://api.rule34.xxx/index.php?page=dapi&s=post&q=index&json=1&tags=${query}`)
       ).data;
       
-      if(posts == underfined){
+      if(posts == undefined){
         this.send(`/gc ¡No encontre ningun resultado! :(`);
         return;
       }
