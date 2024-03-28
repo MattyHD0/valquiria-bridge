@@ -17,7 +17,9 @@ class Rule34Command extends minecraftCommand {
   usersWithelist = [
     "MattyHD0",
     "sBlacky_",
-    "WanderingAka"
+    "WanderingAka",
+    "Alan9010",
+    "Alan9020"
   ]
 
   async onCommand(username, message) {
