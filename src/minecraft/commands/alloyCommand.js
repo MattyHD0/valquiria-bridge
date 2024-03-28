@@ -30,7 +30,7 @@ class AlloyCommand extends minecraftCommand {
       let currentAlloyChances = alloyChances*(10^exponent);
       let estimatedRuns = 100/currentAlloyChances;
 
-      this.send(`/gc Ultimo Divan's Alloy dropeado hace ${hours} horas y ${minutes} minutos, chances actuales: ${currentAlloyChances} (1/${estimatedRuns})`);
+      this.send(`/gc Ultimo Divan's Alloy dropeado hace ${hours} horas y ${minutes} minutos, chances actuales: ${currentAlloyChances}% (1/${estimatedRuns})`);
 
     } catch (error) {
       this.send(`/gc Error: ${error ?? "Algo salio mal..."}`);
