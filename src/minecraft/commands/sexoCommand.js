@@ -42,7 +42,7 @@ class SexoCommand extends minecraftCommand {
       }
 
       
-      this.send(`/gc Waifu: ${upload.data.link}`);
+      this.send(`/gc Aqui tienes tu waifu ${username}: ${upload.data.link}`);
     } catch (error) {
       this.send(`/gc Error: ${error ?? "Algo salio mal..."}`);
     }

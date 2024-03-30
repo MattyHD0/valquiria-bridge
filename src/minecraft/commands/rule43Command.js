@@ -58,7 +58,7 @@ class Rule34Command extends minecraftCommand {
       }
 
       
-      this.send(`/gc Toma tu imagen pinche puerco >-< ${upload.data.link}`);
+      this.send(`/gc ${username} Toma tu imagen pinche puerco >-< ${upload.data.link}`);
     } catch (error) {
       this.send(`/gc Error: ${error ?? "Algo salio mal..."}`);
     }
