@@ -5,7 +5,7 @@ class warpoutCommand extends minecraftCommand {
   constructor(minecraft) {
     super(minecraft);
     this.name = "warpout";
-    this.aliases = ["warp"];
+    this.aliases = ["warp", "w"];
     this.description = "Warp player out of the game";
     this.options = [];
     this.isOnCooldown = false;
