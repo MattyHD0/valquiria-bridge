@@ -42,13 +42,14 @@ class Rule34Command extends minecraftCommand {
       ).data;
       
       let postsAmount = posts.length;
-      let selectedPost = Math.floor(Math.random()*postsAmount);
-      let imageUrl = posts[selectedPost].sample_url;
-      
-      if(imageUrl == undefined){
+
+      if(postsAmount == 0){
         this.send(`/gc ¡No encontre ningun resultado! :(`);
         return;
       }
+
+      let selectedPost = Math.floor(Math.random()*postsAmount);
+      let imageUrl = posts[selectedPost].sample_url;
 
       const upload = await uploadImage(imageUrl);
 
