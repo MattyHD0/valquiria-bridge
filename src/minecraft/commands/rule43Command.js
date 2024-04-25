@@ -16,8 +16,8 @@ class Rule34Command extends minecraftCommand {
 
   usersWithelist = [
     "MattyHD0",
-    "sBlacky_",
-    "WanderingAka",
+    "sBlackyz",
+    "WitheredAka",
     "Alan9010",
     "Alan9020"
   ]
